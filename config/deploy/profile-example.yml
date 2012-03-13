@@ -1,0 +1,17 @@
+staging:
+    server: "0.0.0.0"
+    user: "root"
+    port: "22"
+    path: "/var/www"
+    branch: "master"
+    rvm_ruby_path: "1.9.2@default"
+    rvm_bin_path: "/usr/local/rvm/bin"
+
+production:
+    server: "0.0.0.0"
+    user: "root"
+    port: "22"
+    path: "/var/www"
+    branch: "master"
+    rvm_ruby_path: "1.9.2@default"
+    rvm_bin_path: "/usr/local/rvm/bin"
