@@ -1,0 +1,14 @@
+.DS_Store
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/
+.sass-cache/
+*.backup
+*.bak
+*.cache
+*.log
+*.pid
+*.tmproj
+config/app_config.yml
+config/database.yml
