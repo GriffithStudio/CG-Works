@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CGWorks</title>
+  <title>CG Works</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div id="content">
+  
+  <div id="header">
+    <h1>CG<span class="thin">WORKS</span></h1>
+  </div>
+
+  <div id="main">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    <div class="contact">
+      CHRISTOPHERGRIFFITH <span class="grey">STUDIO</span><br>
+      The AUDITORIUM<br>
+      121 WEST 27th ST<br>
+      NEW YORK, NY<br>
+      10001<br>
+      T: +1.212.475.0007<br>
+      <a href="mailto:studio@christophergriffith.com">studio@christophergriffith.com</a><br>
+      <a href="http://www.christophergriffith.com">www.christophergriffith.com</a>
+      
+    </div>
+    <div class="copyright">&copy;<%= Time.now.year -%> Christopher Griffith Studio</div>
+  </div>
+  
+</div>
 
 </body>
 </html>

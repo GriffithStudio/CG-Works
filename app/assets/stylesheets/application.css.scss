@@ -1,0 +1,103 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+
+body{
+  background-color: #000;
+  color: #fff;
+	font: 14px "Helvetica Neue", "Microsoft Sans Serif", Arial, Helvetica, Geneva, sans-serif;
+	font-weight: 300;
+	a{
+  	color: #c0c0c0;
+  }
+  a img{
+  	border-style: none;
+  }
+  ul{
+    margin: 0;
+  	padding: 0;
+  }
+  li{
+    list-style-type: none;
+    margin: 0;
+  	padding: 0;
+  }
+  h1{
+  	font-size: 4em;
+  	font-style: normal;
+  	font-weight: 500;
+  	margin: 0;
+  	padding: 0;
+  	text-transform: uppercase;
+  }
+  .clear{
+    clear: both;
+  }
+  .thin{
+  	font-weight: 100;
+  }
+  .grey{
+  	color: #919191;
+  }
+}
+#content{
+	width: 960px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#header{
+	width: 960px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+#footer{
+  width: 960px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+	.copyright{
+	  font-size:.8em;
+	  margin-top: 20px;
+	}
+}
+
+#tweets{
+  .entry{
+    background-color: #333;
+    padding: 20px;
+    margin-bottom: 40px;
+    .media{
+      text-align:center;
+      img{
+        max-width: 920px;
+      }
+    }
+    .tweet{
+      font-size: 2.2em;
+      background-color: #000;
+      padding:10px;
+    }
+  }
+  .retweet{
+    background-color: #4C4C4C;
+  }
+}
+
+
+
+
+
+
+
+
+
+
