@@ -4,8 +4,8 @@ require 'yaml'
 
 CAP_PROFILE = YAML.load(File.read(File.expand_path('../profile.yml', __FILE__)))
 
-set :default_stage, "production"
-set :stages, %w(production)
+set :default_stage, "staging"
+set :stages, %w(production staging)
 
 require 'capistrano/ext/multistage'
 require "rvm/capistrano"
