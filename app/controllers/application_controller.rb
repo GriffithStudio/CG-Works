@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :need_scrapbook_update?
   
   def index
-    @tweets = Tweet.all
+    @tweets = Tweet.find(:all, :order => 'posted_at DESC')
     render :template => '/index'
   end
   
@@ -37,6 +37,7 @@ class ApplicationController < ActionController::Base
                           :raw_feed => data.instance_variable_get('@attrs').to_yaml,
                           :text => data.text, 
                           :is_retweet => (data.retweeted_status ? true : false),
+                          :posted_at => data.created_at,
                           :media => pull_media(data),
                           :hashtags => pull_hashtags(data),
                           :mentions => pull_mentions(data),

@@ -9,7 +9,7 @@ class Tweet < ActiveRecord::Base
   # t.text :links
   # t.boolean :display, :default => true
   
-  attr_accessible :twitter_id, :raw_feed, :text, :is_retweet, :media, :hashtags, :mentions, :links
+  attr_accessible :twitter_id, :raw_feed, :text, :is_retweet, :posted_at, :media, :hashtags, :mentions, :links
                         
   validates_uniqueness_of :twitter_id
   

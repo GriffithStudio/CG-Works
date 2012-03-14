@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120313150332) do
+ActiveRecord::Schema.define(:version => 20120314134423) do
 
   create_table "tweets", :force => true do |t|
     t.text     "text"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20120313150332) do
     t.boolean  "display",    :default => true
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.datetime "posted_at"
   end
 
 end
