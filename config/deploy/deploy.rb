@@ -42,6 +42,7 @@ namespace :deploy do
       run "ln -nfs #{shared_path}/config/app_config.yml #{release_path}/config/app_config.yml"
       run "ln -nfs #{shared_path}/cache #{release_path}/tmp/cache"
       run "ln -nfs #{shared_path}/cache #{release_path}/tmp/sass-cache"
+      run "ln -nfs #{shared_path}/public/photos #{release_path}/public/photos"
     end
 
   desc "Setup shared directory."
@@ -49,6 +50,7 @@ namespace :deploy do
     run "mkdir -p #{shared_path}/config"
     run "mkdir -p #{shared_path}/cache"
     run "mkdir -p #{shared_path}/sass-cache"
+    run "mkdir -p #{shared_path}/public/photos"
     run "touch #{shared_path}/config/database.yml"
     run "touch #{shared_path}/config/app_config.yml"
     puts "Now edit the config files and fill assets folder in #{shared_path}."
