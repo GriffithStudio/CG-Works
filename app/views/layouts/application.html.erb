@@ -10,6 +10,15 @@
 
 <div id="content">
   
+  <div id="archives">
+    Archives
+    <ul>
+      <% @tweets_by_month.each do |monthname, tweets| %>
+      <li><%= link_to monthname, "/#{monthname}" %></li>
+      <% end %>
+    </ul>
+  </div>
+  
   <div id="header">
     <h1>CG<span class="thin">WORKS</span></h1>
   </div>
