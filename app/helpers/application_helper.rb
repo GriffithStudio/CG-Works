@@ -16,7 +16,7 @@ module ApplicationHelper
 		end
 
 		for media in tweet.media.to_s.split(",") do
-			rendered_tweet.sub!((YAML::load(media)['display']), link_to((YAML::load(media)['source']),(YAML::load(media)['source']),:target => :blank))
+			rendered_tweet.sub!((YAML::load(media)['display']), "")
 		end
 
 		return raw rendered_tweet

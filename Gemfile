@@ -46,6 +46,9 @@ gem 'scrapbook'
 # Scrapbook relies on Twitter
 gem 'twitter'
 
+# Use paperclip to manage media downloads
+gem 'paperclip'
+
 gem 'rspec-rails', :group => [:test, :development]
 
 group :test do

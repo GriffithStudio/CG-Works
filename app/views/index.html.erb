@@ -1,8 +1,8 @@
 <ul id="tweets">
 	<% for tweet in @tweets do %>
 		<li class="entry <%= 'retweet' if tweet.is_retweet -%>">
-			<% for media in tweet.media.to_s.split(",") do %>
-				<div class="media"><%= image_tag("#{YAML::load(media)['source']}:large") %></div>
+			<% for photo in tweet.photos do %>
+				<div class="media"><%= link_to image_tag(photo.image.url(:large)), photo.image.url(:original, false) %></div>
 			<% end %>
 			<div class="tweet"><%= render_tweet(tweet) %></div>
 			<div class="posted_at"><%= raw tweet.posted_at.strftime("<strong>%H:%M</strong> <span class='thin'>%m.%d.%y</span>") %></div>

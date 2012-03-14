@@ -13,3 +13,4 @@ tmp/
 config/app_config.yml
 config/database.yml
 config/deploy/profile.yml
+public/photos/*
