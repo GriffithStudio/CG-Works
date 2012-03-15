@@ -1,11 +1,17 @@
 <ul id="tweets">
 	<% for tweet in @tweets do %>
 		<li class="entry <%= 'retweet' if tweet.is_retweet -%>">
+		  <div class="posted_at"><%= raw tweet.posted_at.strftime("<strong>%B #{tweet.posted_at.day.ordinalize}, %Y</strong> <span class='thin'>- %H:%M UTC</span>") %></div>
 			<% for photo in tweet.photos do %>
 				<div class="media"><%= link_to image_tag(photo.image.url(:large)), photo.image.url(:original, false) %></div>
+				<ul class="social">
+				  <li><%= image_tag "twitter_icon.png"%></li>
+				  <li><%= image_tag "pinterest_icon.png"%></li>
+				  <li><%= image_tag "tumblr_icon.png"%></li>
+				  <li><%= image_tag "facebook_icon.png"%></li>
+				</ul>
 			<% end %>
 			<div class="tweet"><%= render_tweet(tweet) %></div>
-			<div class="posted_at"><%= raw tweet.posted_at.strftime("<strong>%H:%M</strong> <span class='thin'>%m.%d.%y</span>") %></div>
 			<div class="clear">
 		</li>
 	<% end %>

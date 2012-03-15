@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   
   def index
     @tweets = Tweet.find(:all, :order => 'posted_at DESC')
-    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC").group_by { |tweet| tweet.posted_at.strftime("%m.%y")}
+    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC").group_by { |tweet| tweet.posted_at.strftime("%B %Y")}
     render :template => '/index'
   end
   
