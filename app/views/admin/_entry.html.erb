@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="span8">
+    <% for photo in tweet.photos do %>
+  		<div class="media"><%= link_to image_tag(photo.image.url(:small)), photo.image.url(:original, false) %></div>
+  	<% end %>
+    <div class="posted_at"><%= raw tweet.posted_at.strftime("<strong>%B #{tweet.posted_at.day.ordinalize}, %Y</strong> <span class='thin'>- %H:%M UTC</span>") %></div>
+    <div class="tweet"><%= render_tweet(tweet) %></div>
+  </div>
+  <div class="span4">
+    <a class="btn btn-warning" href="#">Refresh</a>
+    <input type="checkbox">
+  </div>
+</div>

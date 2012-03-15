@@ -1,0 +1,3 @@
+<% for tweet in @tweets do %>
+	<%= render :partial => 'entry', :locals => {:tweet => tweet} %>
+<% end %>
