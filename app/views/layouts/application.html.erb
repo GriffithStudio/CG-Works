@@ -14,7 +14,7 @@
     Archives
     <ul>
       <% @tweets_by_month.each do |monthname, tweets| %>
-      <li><%= link_to monthname, "/#{monthname}" %></li>
+      <li><%= link_to monthname, archived_month_path(monthname.parameterize) %></li>
       <% end %>
     </ul>
   </div>

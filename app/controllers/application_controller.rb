@@ -2,15 +2,19 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   before_filter :need_scrapbook_update?
+  before_filter :tweets_by_month
   
   def index
     @tweets = Tweet.find(:all, :order => 'posted_at DESC')
-    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC").group_by { |tweet| tweet.posted_at.strftime("%B %Y")}
     render :template => '/index'
   end
   
   private
-
+  
+  def tweets_by_month
+    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC", :conditions => ["posted_at >= ?", 1.year.ago]).group_by { |tweet| tweet.posted_at.strftime("%B %Y")}
+  end
+  
   def need_scrapbook_update?
   	if File.exists?("#{Rails.root.to_s}/tmp/cache/scrapbook_cache")
   		if last_scrapbook_upate < 1.hour.ago

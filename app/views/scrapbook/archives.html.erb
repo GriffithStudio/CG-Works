@@ -1,0 +1,6 @@
+Archives
+<ul>
+  <% @archives.each do |monthname, tweets| %>
+  <li><%= link_to monthname, archived_month_path(monthname.parameterize) %> - [<%= tweets.count -%>]</li>
+  <% end %>
+</ul>
