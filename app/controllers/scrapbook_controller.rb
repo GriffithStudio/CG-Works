@@ -9,4 +9,8 @@ class ScrapbookController < ApplicationController
     @tweets = Tweet.find(:all, :conditions => { :posted_at => @archived_month.beginning_of_month .. @archived_month.end_of_month }, :order => 'posted_at DESC')
   end
   
+  def entry
+    @tweet = Tweet.find_by_twitter_id(params[:id])
+  end
+  
 end
