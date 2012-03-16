@@ -52,6 +52,7 @@ gem 'paperclip'
 
 # The iphone checkboxes gem for admin styling
 gem 'ios-checkboxes'
+gem "netsign-ios-checkboxes", "~> 0.1.2"
 
 # Thoughtbot's Bourbon mixins
 gem 'bourbon'

@@ -107,6 +107,8 @@ GEM
     net-ssh (2.3.0)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    netsign-ios-checkboxes (0.1.2)
+      railties (~> 3.1)
     nokogiri (1.5.2)
     paperclip (2.7.0)
       activerecord (>= 2.3.0)
@@ -210,6 +212,7 @@ DEPENDENCIES
   ios-checkboxes
   jquery-rails
   mysql2
+  netsign-ios-checkboxes (~> 0.1.2)
   paperclip
   rails (= 3.2.2)
   rb-fsevent
