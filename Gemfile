@@ -50,6 +50,12 @@ gem 'twitter'
 # Use paperclip to manage media downloads
 gem 'paperclip'
 
+# The iphone checkboxes gem for admin styling
+gem 'ios-checkboxes'
+
+# Thoughtbot's Bourbon mixins
+gem 'bourbon'
+
 gem 'rspec-rails', :group => [:test, :development]
 
 group :test do

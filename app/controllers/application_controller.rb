@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_filter :tweets_by_month
   
   def index
-    @tweets = Tweet.find(:all, :conditions => ["posted_at >= ?", 2.months.ago], :order => 'posted_at DESC', :limit => 20)
+    @tweets = Tweet.find(:all, :conditions => ["display = ? AND posted_at >= ?", true , 2.months.ago], :order => 'posted_at DESC', :limit => 20)
     render :template => '/index'
   end
   
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   
   def tweets_by_month
     @show_archive = true
-    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC", :conditions => ["posted_at >= ?", 1.year.ago]).group_by { |tweet| tweet.posted_at.strftime("%B %Y")}
+    @tweets_by_month = Tweet.find(:all, :order => "posted_at DESC", :conditions => ["display = ? AND posted_at >= ?", true, 1.year.ago]).group_by { |tweet| tweet.posted_at.strftime("%B %Y")}
   end
   
   def need_scrapbook_update?

@@ -4,42 +4,30 @@
   <meta charset="utf-8">
   
   <title>CG Works | Admin</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <%= stylesheet_link_tag    "/bootstrap/css/bootstrap", :media => "all" %>
-  <style type="text/css">
-    body {
-      padding-top: 60px;
-      padding-bottom: 40px;
-    }
-  </style>
-  <%= stylesheet_link_tag    "/bootstrap/css/bootstrap-responsive", :media => "all" %>
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  <%= javascript_include_tag "/bootstrap/js/bootstrap" %>
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="navbar navbar-fixed-top">
-        <div class="navbar-inner">
-          <div class="container">
-            <a class="brand" href="/admin">CG Works | Admin</a>
-            <a class="btn btn-warning" href="#">Refresh All</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        
-        <%= yield %>
-                
-        <hr>
-
-        <footer>
-          <p>&copy; Christopher Griffith Studio <%= Time.now.year -%></p>
-        </footer>
-
-      </div>
-
   
+  <div id="header">
+    <div class="contents">
+      <h1><%= link_to "CG Works Admin", admin_path %></h1>
+      <div class="refresh btn">
+        <%= link_to "Refresh All", "javascript:;", :onclick => "$.post('#{eval("admin_refresh_all_tweets_path")}')" %>
+      </div>
+    </div>
+  </div>
+  
+  <div id="main">
+    <%= yield %>
+  </div>
+  
+  <div id="footer">
+    <div class="contents">
+      <div class="copyright">&copy; Christopher Griffith Studio <%= Time.now.year -%></div>
+    </div>
+  </div>
+
+</body>
+</html>

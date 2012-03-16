@@ -1,0 +1,124 @@
+/*
+ *= require ios-checkboxes
+ *= require_self
+*/
+
+@import "bourbon";
+
+body{
+  margin: 0;
+  width: 100%;
+  font-family: $helvetica;
+  font-size: 14px;
+  .btn {
+    @include button(simple, #5197ec);
+    a{
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .clear{
+    clear:both;
+  }
+}
+
+/*
+label.iPhoneCheckLabelOn{
+  background: url('/assets/iphone-style-') no-repeat;
+}
+*/
+
+#header{
+  height: 60px;
+  background-color: #333;
+  @include box-shadow(0 0 5px 0px #000);
+  margin-bottom: 10px;
+  .contents{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+  h1{
+    float: left;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 200;
+    font-size: 32px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .refresh{
+    float: right;
+    margin-top: 15px;
+  }
+}
+
+#main{
+  .entry{
+    .contents{
+      margin-left: auto;
+      margin-right: auto;
+      width: 960px;
+    }
+    clear: both;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px solid #999;
+    position: relative;
+    &:first-child{
+      border: none;
+    }
+    .media{
+      float: left;
+      margin-right: 10px;
+      img{
+        border: 1px solid #999;
+      }
+    }
+    .posted_at{
+      font-size: .8em;
+      margin-bottom: 5px;
+    }
+    .tweet{
+      float: left;
+      max-width: 500px;
+      clear: right;
+    }
+    .actions{
+      float: right;
+      position: absolute;
+      top: 50%;
+      width: 960px;
+      height: 28px;
+      margin-top: -1.1em;
+      .refresh{
+        float: right;
+        margin-right: 10px;
+      }
+      .visiblity{
+        float: right;
+      }
+    }
+  }
+}
+
+#footer{
+  height: 40px;
+  background-color: #efefef;
+  @include box-shadow(0 0 5px 0px #000);
+  margin-top: 10px;
+  .contents{
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+  }
+  .copyright{
+    padding-top: 15px;
+    color: #999;
+    font-size: .8em;
+    text-align: center;
+  }
+}
