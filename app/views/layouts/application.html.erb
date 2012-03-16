@@ -1,26 +1,32 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>CG Works</title>
+  <title>CG Works<%= "| #{@subtitle}" if @subtitle %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CG Works<%= "| #{@subtitle}" if @subtitle %>">
+  <meta name="author" content="Christopher Griffith Studio">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<div id="content">
-  
+<% if @show_archive %>
   <div id="archives">
-    Archives
     <ul>
       <% @tweets_by_month.each do |monthname, tweets| %>
       <li><%= link_to monthname, archived_month_path(monthname.parameterize) %></li>
       <% end %>
     </ul>
   </div>
-  
+<% end %>
+<div id="content">
   <div id="header">
-    <h1>CG<span class="thin">WORKS</span></h1>
+    <div class="logo">
+      <%= link_to image_tag("logo.png", :alt => "CG WORKS", :title => "CG WORKS", :description => "Christopher Griffith Studio Works"), root_path %>
+    </div>
+    <h1>CG Works</h1>
+    <%= raw("<h2>#{@subtitle}</h2>") if @subtitle %>
+    <div class="clear"></div>
   </div>
 
   <div id="main">
@@ -43,6 +49,8 @@
   </div>
   
 </div>
+
+<%= render :partial => '/analytics' %>
 
 </body>
 </html>

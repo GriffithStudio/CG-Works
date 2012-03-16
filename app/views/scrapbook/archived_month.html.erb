@@ -1,5 +1,3 @@
-<h2>Archive of <%= @archived_month.strftime("%B %Y") %></h2>
-
 <ul id="tweets">
 	<% for tweet in @tweets do %>
 		<%= render :partial => 'scrapbook/entry', :locals => {:tweet => tweet} %>

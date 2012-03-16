@@ -11,8 +11,11 @@
  *= require_self
  *= require_tree .
 */
-
 body{
+  width: 960px;
+  margin: 0;
+	margin-right: auto;
+	margin-left: auto;
   background-color: #000;
   color: #fff;
 	font: 14px "Helvetica Neue", "Microsoft Sans Serif", Arial, Helvetica, Geneva, sans-serif;
@@ -32,14 +35,6 @@ body{
     margin: 0;
   	padding: 0;
   }
-  h1{
-  	font-size: 4em;
-  	font-style: normal;
-  	font-weight: 500;
-  	margin: 0;
-  	padding: 0;
-  	text-transform: uppercase;
-  }
   .clear{
     clear: both;
   }
@@ -51,23 +46,46 @@ body{
   }
 }
 #content{
-	width: 960px;
-	margin-right: auto;
-	margin-left: auto;
+  margin-left: 170px;
+	width: 800px;
 }
 #header{
-	width: 960px;
-	margin-top: 40px;
-	margin-bottom: 20px;
+  margin-top: 30px;
+	margin-bottom: 10px;
+	h1{
+	  display: none;
+	}
+	.logo{
+	  float: left;
+	  img{
+	    margin-left: -12px;
+	    margin-top: -12px;
+	  }
+	}
+	h2{
+	  font-size: 20px;
+	  width: 400px;
+	  font-weight: 100;
+	  border-left: 1px solid #4C4C4C;
+	  float: left;
+	  height: 60px;
+	  margin: 0px;
+	  padding-left: 10px;
+	  overflow: hidden;
+	  line-height: 60px;
+	}
 }
 #footer{
-  width: 960px;
 	margin-top: 20px;
 	margin-bottom: 40px;
 	.copyright{
 	  font-size:.8em;
 	  margin-top: 20px;
 	}
+}
+
+#main{
+  min-height: 200px;
 }
 
 #tweets{
@@ -97,11 +115,22 @@ body{
         }
       }
     }
+    .social.text{
+      margin-top: 20px;
+      li{
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 0px;
+      }
+    }
     .tweet{
       font-size: 1.5em;
       width: 600px;
       clear: both;
       padding-top: 10px;
+      &.text{
+        margin-top: 10px;
+      }
     }
     .tweet_id{
       display: none;
@@ -117,10 +146,15 @@ body{
 #archives{
   text-align: right;
   position: fixed;
-  top: 125px;
-  width: 140px;
-  padding: 20px;
-  margin-left: -180px;
+  width: 150px;
+  padding: 0 20px 0 0;
+  top: 115px;
+  font-size: 1.2em;
+  font-weight: 100;
+  letter-spacing: .1em;
+  a{
+    text-decoration: none;
+  }
 }
 
 

@@ -1,5 +1,7 @@
 module ApplicationHelper
   
+  require "uri"
+  
   def render_tweet(tweet)
 		rendered_tweet = tweet.text
 
@@ -20,6 +22,11 @@ module ApplicationHelper
 		end
 
 		return raw rendered_tweet
+	end
+	
+	def escaped_for_urls(url)
+	  #CGI::encode(url)
+	  return URI.escape(url, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))
 	end
 	
 end
