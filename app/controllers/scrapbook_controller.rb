@@ -10,7 +10,7 @@ class ScrapbookController < ApplicationController
   
   def archived_month
     @archived_month = Time.strptime(params[:archived_month], "%b-%Y")
-    @subtitle = @archived_month.strftime("%B %Y")
+    @subtitle = @archived_month.strftime("%B")
     @tweets = Tweet.find(:all, :conditions => { :display => true, :posted_at => @archived_month.beginning_of_month .. @archived_month.end_of_month }, :order => 'posted_at DESC')
   end
   
