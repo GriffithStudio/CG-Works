@@ -32,7 +32,7 @@ body{
   	font-weight: 100;
   }
   .grey{
-  	color: #919191;
+  	color: #c0c0c0;
   }
 }
 #content{
@@ -53,16 +53,16 @@ body{
 	  }
 	}
 	h2{
-	  font-size: 20px;
+	  font-size: 68px;
 	  width: 400px;
 	  font-weight: 100;
-	  border-left: 1px solid #4C4C4C;
 	  float: left;
 	  height: 60px;
 	  margin: 0px;
-	  padding-left: 10px;
+	  margin-left: -10px;
 	  overflow: hidden;
-	  line-height: 60px;
+	  line-height: 68px;
+	  text-transform: uppercase;
 	}
 }
 #footer{
@@ -71,6 +71,11 @@ body{
 	.copyright{
 	  font-size:.8em;
 	  margin-top: 20px;
+	}
+	.source_code{
+	  font-size:.8em;
+	  margin-top: 20px;
+	  width: 400px;
 	}
 }
 
@@ -102,12 +107,12 @@ body{
       li{
         margin-bottom: 10px;
         img{
-          width: 30px;
+          width: 20px;
         }
       }
     }
     .social.text{
-      margin-top: 20px;
+      margin-top: 25px;
       li{
         float: left;
         margin-right: 10px;
@@ -115,7 +120,8 @@ body{
       }
     }
     .tweet{
-      font-size: 1.5em;
+      font-size: 1.2em;
+      font-weight: 100;
       width: 600px;
       clear: both;
       padding-top: 10px;
@@ -128,6 +134,7 @@ body{
     }
     .posted_at{
       font-size: .8em;
+      text-transform: uppercase;
     }
   }
   .retweet{
@@ -143,8 +150,10 @@ body{
   font-size: 1.2em;
   font-weight: 100;
   letter-spacing: .1em;
+  text-transform: uppercase;
   a{
     text-decoration: none;
+    color: #c0c0c0;
   }
 }
 

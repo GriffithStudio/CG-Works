@@ -16,7 +16,6 @@ class ScrapbookController < ApplicationController
   
   def entry
     @tweet = Tweet.find_by_twitter_id(params[:id])
-    @subtitle = truncate(@tweet.text.gsub(/((http:\/\/)([A-Za-z0-9_=%&@\?\.\/\-]+))\b/,''), :length => 50)
   end
   
 end
